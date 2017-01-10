@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_question"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lasalle.first.part.quiz.QuestionActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/questionCounterTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Question 1/5"
+            android:layout_margin="@dimen/questions_vertical_margin" />
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Question"
+            android:layout_margin="@dimen/questions_vertical_margin"
+            android:textSize="@dimen/question_font_size"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/firstAnswerRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resposta 1"
+                style="@style/RadioButtonStyle"/>
+
+            <RadioButton
+                android:id="@+id/secondAnswerRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resposta 1"
+                style="@style/RadioButtonStyle"/>
+
+            <RadioButton
+                android:id="@+id/thirdAnswerRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resposta 1"
+                style="@style/RadioButtonStyle"/>
+
+            <RadioButton
+                android:id="@+id/fourthAnswerRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resposta 1"
+                style="@style/RadioButtonStyle"/>
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/nextQuestionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/button_horizontal_margin"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@color/white"
+            android:text="@string/submit_button_text"
+            android:padding="@dimen/button_padding"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

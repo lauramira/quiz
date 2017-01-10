@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="RadioButtonStyle">
+        <item name="android:layout_margin">@dimen/answers_horizontal_margin</item>
+    </style>
+
+
 </resources>

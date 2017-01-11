@@ -9,10 +9,10 @@ import java.util.Map;
 
 public class Question {
     private String question;
-    private Map<String, Integer> questionList;
+    private String [] questionList = new String [4];
     private Integer correctAnswer;
 
-    public Question(String question, Map<String, Integer> questionList, Integer correctAnswer){
+    public Question(String question,String [] questionList, Integer correctAnswer){
         this.question = question;
         this.questionList = questionList;
         this.correctAnswer = correctAnswer;
@@ -26,11 +26,11 @@ public class Question {
         this.question = question;
     }
 
-    public Map<String, Integer> getQuestionList() {
+    public String[] getQuestionList() {
         return questionList;
     }
 
-    public void setQuestionList(Map<String, Integer> questionList) {
+    public void setQuestionList(String[] questionList) {
         this.questionList = questionList;
     }
 

@@ -16,7 +16,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/questionCounterTextView"
+            android:id="@+id/progressTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -32,6 +32,7 @@
             android:textSize="@dimen/question_font_size"/>
 
         <RadioGroup
+            android:id="@+id/answersRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -67,7 +68,7 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/nextQuestionButton"
+            android:id="@+id/submitButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

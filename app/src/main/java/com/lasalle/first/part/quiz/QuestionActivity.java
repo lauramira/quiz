@@ -1,8 +1,10 @@
 package com.lasalle.first.part.quiz;
 
+import android.content.Intent;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -39,7 +41,7 @@ public class QuestionActivity extends AppCompatActivity {
 
         init();
         initQuestions();
-        showQuestion();
+        showNextQuestion();
     }
 
     private void init(){
@@ -47,7 +49,25 @@ public class QuestionActivity extends AppCompatActivity {
         currentQuestion = 0;
 
         submitButton = (Button) findViewById(R.id.submitButton);
-        submitButton.setEnabled(false);
+        //submitButton.setEnabled(false);
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            if (checkResponse()) {
+                currentQuestion++;
+                radioGroup.clearCheck();
+                if (currentQuestion >= questions.length) {
+                    Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
+                    intent.putExtra("incorrect", result.getIncorrectAnswers());
+                    intent.putExtra("correct", result.getCorrectAnswers());
+                    intent.putExtra("total", result.getTotalQuestions());
+                    startActivity(intent);
+                    finish();
+                } else {
+                    showNextQuestion();
+                }
+            }
+            }
+        });
 
         questionTextView = (TextView) findViewById(R.id.questionTextView);
         progressTextView = (TextView) findViewById(R.id.progressTextView);
@@ -81,10 +101,10 @@ public class QuestionActivity extends AppCompatActivity {
         String question3 = "Who won the 2013 MotoGP world title?";
         String [] answers3List = new String[4];
         answers3List[0]="Jorge Lorenzo";
-        answers3List[0]="Marc Márquez";
-        answers3List[0]="Valentino Rossi";
-        answers3List[0]="Dani Pedrosa";
-        questions[2] = new Question(question3, answers3List, 2);
+        answers3List[1]="Marc Márquez";
+        answers3List[2]="Valentino Rossi";
+        answers3List[3]="Dani Pedrosa";
+        questions[2] = new Question(question3, answers3List, 1);
 
         String question4 = "Who won the 2014 World Cup?";
         String [] answers4List = new String[4];
@@ -92,7 +112,7 @@ public class QuestionActivity extends AppCompatActivity {
         answers4List[1]="Brazil";
         answers4List[2]="Spain";
         answers4List[3]="Germany";
-        questions[3] = new Question(question4, answers4List, 4);
+        questions[3] = new Question(question4, answers4List, 3);
 
         String question5 = "Who won the 2010 Roland Garros?";
         String [] answers5List = new String[4];
@@ -100,10 +120,10 @@ public class QuestionActivity extends AppCompatActivity {
         answers5List[1]="Roger Federer";
         answers5List[2]="Rafa Nadal";
         answers5List[3]="Juan Carlos Ferrero";
-        questions[4] = new Question(question5, answers5List, 3);
+        questions[4] = new Question(question5, answers5List, 2);
     }
 
-    public void showQuestion(){
+    public void showNextQuestion(){
         questionTextView.setText(questions[currentQuestion].getQuestion());
 
         firstAnswer.setText(questions[currentQuestion].getQuestionList()[0]);
@@ -112,9 +132,19 @@ public class QuestionActivity extends AppCompatActivity {
         fourthAnswer.setText(questions[currentQuestion].getQuestionList()[3]);
 
         progressTextView.setText(PROGRESS_QUESTION_TEXT.replace("?", (currentQuestion + 1) + ""));
-
-        //String radiovalue = ((RadioButton)findViewById(rg.getCheckedRadioButtonId())).getText().toString();
     }
 
+    private boolean checkResponse(){
+        RadioButton radioButtonSelected = ((RadioButton)findViewById(radioGroup.getCheckedRadioButtonId()));
+        if (radioButtonSelected != null) {
+            if (radioButtonSelected.getText().toString() == questions[currentQuestion].getQuestionList()[questions[currentQuestion].getCorrectAnswer()]) {
+                result.setCorrectAnswers(result.getCorrectAnswers() + 1);
+            } else {
+                result.setIncorrectAnswers(result.getIncorrectAnswers() + 1);
+            }
+            return true;
+        }
+        return false;
+    }
 
 }

@@ -20,9 +20,7 @@
            android:layout_width="match_parent"
            android:layout_gravity="center_vertical"
            android:text="@string/start_quiz"
-           android:background="@color/colorPrimaryDark"
-           android:textColor="@color/white"
-           android:layout_margin="@dimen/button_horizontal_margin"
+           style="@style/ButtonStyle"
            />
 
    </LinearLayout>

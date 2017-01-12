@@ -3,4 +3,9 @@
 
     <string name="start_quiz">Start quiz</string>
     <string name="submit_button_text">Submit</string>
+    <string name="title_your_result">Your results: </string>
+    <string name="incorrect">Incorrect:</string>
+    <string name="correct">Correct:</string>
+    <string name="total_questions">Total number of questions:</string>
+    <string name="try_again_button_text">Try again</string>
 </resources>

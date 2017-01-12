@@ -71,13 +71,8 @@
             android:id="@+id/submitButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="@dimen/button_horizontal_margin"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@color/white"
             android:text="@string/submit_button_text"
-            android:padding="@dimen/button_padding"
-            />
+            style="@style/ButtonStyle" />
 
     </LinearLayout>
 

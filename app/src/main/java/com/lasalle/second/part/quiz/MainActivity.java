@@ -1,4 +1,4 @@
-package com.lasalle.first.part.quiz;
+package com.lasalle.second.part.quiz;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -12,16 +12,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        init();
-    }
 
-    private void init(){
         Button startButton = (Button) findViewById(R.id.startButton);
-
         startButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
-                startActivity(intent);
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), QuestionActivity.class);
+                startActivity(i);
                 finish();
             }
         });

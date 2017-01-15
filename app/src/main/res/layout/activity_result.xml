@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_result"
     android:layout_width="match_parent"
@@ -8,93 +8,90 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.lasalle.first.part.quiz.ResultActivity">
+    tools:context="com.lasalle.second.part.quiz.ResultActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="@string/results_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textAlignment="center"
+        android:textStyle="normal|bold" />
 
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <TextView
+            android:text="@string/results_total_questions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_your_result"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="@dimen/activity_horizontal_margin" />
+            android:id="@+id/textView4"
+            android:layout_weight="1"
+            android:textStyle="normal|bold" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="@dimen/button_horizontal_margin">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_vertical" >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/total_questions" />
-
-                <TextView
-                    android:id="@+id/totalQuestionsTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/correct"/>
-
-                <TextView
-                    android:id="@+id/totalCorrectTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/incorrect"/>
-
-                <TextView
-                    android:id="@+id/totalIncorrectTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    />
-
-            </LinearLayout>
-        </LinearLayout>
-            <Button
-                android:id="@+id/tryAgainButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/try_again_button_text"
-                style="@style/ButtonStyle"/>
-
+            android:id="@+id/textTotalQuestions"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:layout_gravity="end" />
     </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/results_total_correct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            android:layout_weight="1"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textCorrect"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:layout_gravity="end" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="@string/results_total_incorrect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView7"
+            android:layout_weight="1"
+            android:textStyle="normal|bold" />
+
+        <TextView
+            android:text="@string/try_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textIncorrect"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+    <Button
+        android:text="@string/play_again"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/playAgainButton"
+        style="@style/ButtonStyle"/>
+</LinearLayout>

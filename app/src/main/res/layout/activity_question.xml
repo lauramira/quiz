@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_question"
     android:layout_width="match_parent"
@@ -8,72 +8,61 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.lasalle.first.part.quiz.QuestionActivity">
+    tools:context="com.lasalle.second.part.quiz.QuestionActivity"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
+        android:text="@string/current_question"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/questionBreadcrumb"
+        android:textAlignment="center" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/questionTitle"
+        android:textStyle="normal|bold"
+        android:textAlignment="center" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/progressTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Question 1/5"
-            android:layout_margin="@dimen/questions_vertical_margin" />
-        <TextView
-            android:id="@+id/questionTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Question"
-            android:layout_margin="@dimen/questions_vertical_margin"
-            android:textSize="@dimen/question_font_size"/>
-
-        <RadioGroup
-            android:id="@+id/answersRadioGroup"
+        <RadioButton
+            android:text="RadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:id="@+id/answer1" />
 
-            <RadioButton
-                android:id="@+id/firstAnswerRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Resposta 1"
-                style="@style/RadioButtonStyle"/>
-
-            <RadioButton
-                android:id="@+id/secondAnswerRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Resposta 1"
-                style="@style/RadioButtonStyle"/>
-
-            <RadioButton
-                android:id="@+id/thirdAnswerRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Resposta 1"
-                style="@style/RadioButtonStyle"/>
-
-            <RadioButton
-                android:id="@+id/fourthAnswerRadioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Resposta 1"
-                style="@style/RadioButtonStyle"/>
-
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/submitButton"
+        <RadioButton
+            android:text="RadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/submit_button_text"
-            style="@style/ButtonStyle" />
+            android:id="@+id/answer2" />
 
-    </LinearLayout>
+        <RadioButton
+            android:text="RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/answer3" />
 
-</RelativeLayout>
+        <RadioButton
+            android:text="RadioButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/answer4" />
+    </RadioGroup>
+
+    <Button
+        android:text="@string/submit_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/submitButton"
+        style="@style/ButtonStyle"/>
+
+
+</LinearLayout>

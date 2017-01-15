@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lasalle.first.part.quiz">
+    package="com.lasalle.second.part.quiz">
 
     <application
         android:allowBackup="true"

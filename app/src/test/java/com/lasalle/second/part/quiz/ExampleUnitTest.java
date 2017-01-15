@@ -1,4 +1,4 @@
-package com.lasalle.first.part.quiz;
+package com.lasalle.second.part.quiz;
 
 import org.junit.Test;
 

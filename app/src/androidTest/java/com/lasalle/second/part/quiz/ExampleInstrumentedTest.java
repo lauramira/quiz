@@ -1,4 +1,4 @@
-package com.lasalle.first.part.quiz;
+package com.lasalle.second.part.quiz;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.lasalle.first.part.quiz", appContext.getPackageName());
+        assertEquals("com.lasalle.second.part.quiz", appContext.getPackageName());
     }
 }

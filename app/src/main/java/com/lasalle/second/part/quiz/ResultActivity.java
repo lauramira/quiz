@@ -12,14 +12,13 @@ import com.lasalle.second.part.quiz.models.Answer;
 import com.lasalle.second.part.quiz.models.Question;
 import com.lasalle.second.part.quiz.models.Result;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity extends CustomActivity {
     ResultManager resultManager;
     Button playAgainButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
 
         resultManager = new ResultManager();
         formatResult();
@@ -35,6 +34,14 @@ public class ResultActivity extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    protected int getLayoutResourceId() {
+        return R.layout.activity_result;
+    }
+
+    @Override
+    protected void customizeToolBar() {}
 
     private void formatResult() {
         Result currentResult = resultManager.getCurrentResult(0);
